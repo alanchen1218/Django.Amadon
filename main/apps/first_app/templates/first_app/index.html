@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'first_app/styles.css' %}">
+</head>
+<body>
+    <h2>Amadon Store!</h2>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+        <tr>
+            <form action ="/process" method = "post">
+                {% csrf_token %}
+                <td><input type ="hidden" name="id" value="tshirt"> Tshirt</td>
+                <td>$19.99</td>
+                <!-- <input type ="hidden" name="price" value="19.99"> -->
+                <td><select name="quantity">
+                    <option value = "1">1</option>
+                    <option value = "2">2</option>
+                    <option value = "3">3</option>
+                </select></td>
+                <td><input type="submit" name="buy" value="Buy"></td>
+            </form>
+        </tr>
+        <tr>
+            <form action ="/process" method = "post">
+                {% csrf_token %}
+                <td><input type ="hidden" name="id" value="sweater"> Sweater</td>
+                <td> $29.99</td>
+                <!-- <input type ="hidden" name="price" value="29.99"> -->
+                <td><select name="quantity">
+                    <option value = "1">1</option>
+                    <option value = "2">2</option>
+                    <option value = "3">3</option>
+                </select></td>
+                <td><input type="submit" name="buy" value="Buy"></td>
+            </form>
+         </tr>
+         <tr>
+            <form action ="/process" method = "post">
+                {% csrf_token %}
+                <td><input type ="hidden" name="id" value="cup"> Cup</td>
+                <td> $4.99</td>
+                <!-- <input type ="hidden" name="price" value="4.99"> -->
+                <td><select name="quantity">
+                    <option value = "1">1</option>
+                    <option value = "2">2</option>
+                    <option value = "3">3</option>
+                </select></td>
+                <td><input type="submit" name="buy" value="Buy"></td>
+            </form>
+        </tr>
+        <tr>
+            <form action ="/process" method = "post">
+                {% csrf_token %}
+                <td><input type ="hidden" name="id" value="book"> Book</td>
+                <td>$49.99</td>
+                <!-- <input type ="hidden" name="price" value="49.99"> -->
+                <td><select name="quantity">
+                    <option value = "1">1</option>
+                    <option value = "2">2</option>
+                    <option value = "3">3</option>
+                </select></td>
+                <td><input type="submit" name="buy" value="Buy"></td>
+            </form>
+        </tr>
+    </table>
+</body>
+</html>
